@@ -8,7 +8,7 @@ type TwitterService struct {
 	Api *anaconda.TwitterApi
 }
 
-func NewTwitterService(consumerKey string, consumerSecret string, apiToken string, apiSecret string) TwitterService {
+func TwitterAPIClient(consumerKey string, consumerSecret string, apiToken string, apiSecret string) TwitterService {
 	anaconda.SetConsumerKey(consumerKey)
 	anaconda.SetConsumerSecret(consumerSecret)
 	api := anaconda.NewTwitterApi(apiToken, apiSecret)

@@ -23,7 +23,7 @@ type WeatherApi struct {
 	Location string
 }
 
-func NewWeatherApi(apiKey string) WeatherApi {
+func WeatherAPIClient(apiKey string) WeatherApi {
 	os.Setenv("OWM_API_KEY", apiKey) // owm requires this env var to function
 
 	return WeatherApi{

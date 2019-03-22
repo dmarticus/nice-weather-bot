@@ -28,5 +28,6 @@ _testmain.go
 .idea/
 .vscode/
 out/
+vendor/
 nice-weather-bot
 .env

@@ -7,13 +7,15 @@ import (
 )
 
 func main() {
-	weatherAPI := NewWeatherApi(os.Getenv("OWM_API_KEY"))
-	twitterAPI := NewTwitterService(
+	weatherAPI := WeatherAPIClient(os.Getenv("OWM_API_KEY"))
+	twitterAPI := TwitterAPIClient(
 		os.Getenv("TWITTER_CONSUMER_KEY"),
 		os.Getenv("TWITTER_CONSUMER_SECRET"),
 		os.Getenv("TWITTER_API_TOKEN"),
 		os.Getenv("TWITTER_API_SECRET"),
 	)
+
+	giphyAPI := GiphyAPIClient(os.Getenv("GIPHY_API_KEY"))
 
 	for {
 		forecast := weatherAPI.Now()

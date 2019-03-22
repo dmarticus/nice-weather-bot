@@ -21,9 +21,10 @@ func main() {
 		forecast := weatherAPI.Now()
 		fmt.Println(time.Now())
 		fmt.Println(forecast.Weather)
-		testText := "sup family I'm alive"
-		fmt.Println(testText)
-		twitterAPI.PostTweet(testText)
+		gif, _ := giphyAPI.GetRandomGif(forecast.WeatherLevel)
+		testText := "and can I get a giphy: "
+		fmt.Println(testText + gif.URL)
+		twitterAPI.PostTweet(testText + gif.URL)
 		time.Sleep(2 * time.Hour)
 		fmt.Println(twitterAPI)
 	}

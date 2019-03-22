@@ -23,11 +23,23 @@ type WeatherApi struct {
 	Location string
 }
 
+type LocationInfo struct {
+	City           string
+	OpenWeatherURL string
+}
+
+// set specific location here
+// TODO make this in some sort of config file
+var Location = LocationInfo{
+	City:           "Nice",
+	OpenWeatherURL: "https://openweathermap.org/city/6454924",
+}
+
 func WeatherAPIClient(apiKey string) WeatherApi {
 	os.Setenv("OWM_API_KEY", apiKey) // owm requires this env var to function
 
 	return WeatherApi{
-		Location: "Nice",
+		Location: Location.City,
 	}
 }
 

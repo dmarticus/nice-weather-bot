@@ -21,10 +21,14 @@ func main() {
 		forecast := weatherAPI.Now()
 		fmt.Println(time.Now())
 		fmt.Println(forecast.Weather)
+		fmt.Println(forecast.Temperature)
 		gif, _ := giphyAPI.GetRandomGif(forecast.WeatherLevel)
-		testText := "and can I get a giphy: "
+		testText := "and can I get a location: "
+		locationUrl := Location.OpenWeatherURL
 		fmt.Println(testText + gif.URL)
-		twitterAPI.PostTweet(testText + gif.URL)
+		if forecast.Temperature >= 55.00 && forecast.Temperature < 70.00 {
+			twitterAPI.PostTweet(testText + locationUrl)
+		}
 		time.Sleep(2 * time.Hour)
 		fmt.Println(twitterAPI)
 	}

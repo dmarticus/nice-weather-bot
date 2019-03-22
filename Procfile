@@ -1,1 +1,0 @@
-app: nice-weather-bot

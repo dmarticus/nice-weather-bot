@@ -2,6 +2,9 @@
 	"ImportPath": "github.com/dmarticus/nice-weather-bot",
 	"GoVersion": "go1.11",
 	"GodepVersion": "v80",
+	"Packages": [
+		"./..."
+	],
 	"Deps": [
 		{
 			"ImportPath": "github.com/ChimeraCoder/anaconda",

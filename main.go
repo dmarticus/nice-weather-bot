@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"time"
+
+	"github.com/kyokomi/emoji"
 )
 
 func main() {
@@ -15,20 +17,17 @@ func main() {
 		os.Getenv("TWITTER_API_SECRET"),
 	)
 
-	giphyAPI := GiphyAPIClient(os.Getenv("GIPHY_API_KEY"))
-
 	for {
 		forecast := weatherAPI.Now()
 		fmt.Println(time.Now())
-		fmt.Println(forecast.Weather)
-		fmt.Println(forecast.Temperature)
-		gif, _ := giphyAPI.GetRandomGif(forecast.WeatherLevel)
-		testText := "and can I get a location: "
-		locationUrl := Location.OpenWeatherURL
-		fmt.Println(testText + gif.URL)
-		if forecast.Temperature >= 55.00 && forecast.Temperature < 70.00 {
-			twitterAPI.PostTweet(testText + locationUrl)
+		fmt.Println(twitterAPI)
+		forecastString := "It's " + fmt.Sprintf("%.0f", forecast.Temperature) + " degrees Fahrenheit in Nice today."
+		detailsString := "\nProof: " + Location.OpenWeatherURL
+		fmt.Println(forecastString + detailsString)
+		if forecast.Temperature >= 69.00 && forecast.Temperature < 70.00 {
+			twitterAPI.PostTweet(forecastString + emoji.Sprint(" Niiice :fire: :fire: fire:") + detailsString)
 		}
+		twitterAPI.PostTweet(forecastString + detailsString)
 		time.Sleep(2 * time.Hour)
 		fmt.Println(twitterAPI)
 	}

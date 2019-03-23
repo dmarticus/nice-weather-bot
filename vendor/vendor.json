@@ -1,0 +1,13 @@
+{
+	"comment": "",
+	"ignore": "",
+	"package": [
+		{
+			"checksumSHA1": "D34JMYeRmmKore0yuiqwbkkc6Nw=",
+			"path": "github.com/kyokomi/emoji",
+			"revision": "51762253ec2b5dafce2d33adfb0d49121924ee58",
+			"revisionTime": "2019-03-03T06:51:19Z"
+		}
+	],
+	"rootPath": "github.com/dmarticus/nice-weather-bot"
+}

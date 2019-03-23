@@ -1,4 +1,4 @@
-# Created by .ignore support plugin (hsz.mobi)
+# Created by .gitignore support plugin (hsz.mobi)
 ### Go template
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
@@ -25,8 +25,7 @@ _testmain.go
 *.test
 *.prof
 
-.idea/
-.vscode/
-out/
-nice-weather-bot
-.env
+.idea
+*.iml
+
+coverage.*

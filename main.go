@@ -19,8 +19,8 @@ func main() {
 
 	for {
 		forecast := weatherAPI.Now()
-		fmt.Println(time.Now())
-		fmt.Println(twitterAPI)
+		// fmt.Println(time.Now())
+		// fmt.Println(twitterAPI)
 		forecastString := "It's " + fmt.Sprintf("%.0f", forecast.Temperature) + " degrees Fahrenheit in Nice today."
 		detailsString := "\nProof: " + Location.OpenWeatherURL
 		fmt.Println(forecastString + detailsString)
@@ -29,6 +29,6 @@ func main() {
 		}
 		twitterAPI.PostTweet(forecastString + detailsString)
 		time.Sleep(2 * time.Hour)
-		fmt.Println(twitterAPI)
+		// fmt.Println(twitterAPI)
 	}
 }

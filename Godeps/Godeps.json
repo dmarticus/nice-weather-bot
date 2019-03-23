@@ -1,10 +1,7 @@
 {
 	"ImportPath": "github.com/dmarticus/nice-weather-bot",
-	"GoVersion": "go1.6",
-	"GodepVersion": "v74",
-	"Packages": [
-		"./..."
-	],
+	"GoVersion": "go1.11",
+	"GodepVersion": "v80",
 	"Deps": [
 		{
 			"ImportPath": "github.com/ChimeraCoder/anaconda",
@@ -36,8 +33,9 @@
 			"Rev": "719b069913e1151a73ea30d2ea4f90deda3ce234"
 		},
 		{
-			"ImportPath": "github.com/peterhellberg/emojilib",
-			"Rev": "7190424c68e6e8d4d9c12fc4407c50d342fe6aad"
+			"ImportPath": "github.com/kyokomi/emoji",
+			"Comment": "v2.1.0-2-g5176225",
+			"Rev": "51762253ec2b5dafce2d33adfb0d49121924ee58"
 		}
 	]
 }

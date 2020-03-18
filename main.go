@@ -21,7 +21,7 @@ func main() {
 		forecast := weatherAPI.Now()
 		// fmt.Println(time.Now())
 		// fmt.Println(twitterAPI)
-		forecastString := "It's " + fmt.Sprintf("%.0f", forecast.Temperature) + " degrees Fahrenheit in Nice today."
+		forecastString := "It's " + fmt.Sprintf("%.0f", forecast.Temperature) + " degrees Fahrenheit in Nice currently."
 		detailsString := "\nProof: " + Location.OpenWeatherURL
 		fmt.Println(forecastString + detailsString)
 		if forecast.Temperature >= 69.00 && forecast.Temperature < 70.00 {

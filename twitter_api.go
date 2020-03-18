@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/ChimeraCoder/anaconda"
 )
 
@@ -19,5 +21,8 @@ func TwitterAPIClient(consumerKey string, consumerSecret string, apiToken string
 }
 
 func (self TwitterService) PostTweet(text string) {
-	self.Api.PostTweet(text, nil)
+	_, err := self.Api.PostTweet(text, nil)
+	if err != nil {
+		fmt.Printf("there was an error posting the tweet: %s\n", err)
+	}
 }

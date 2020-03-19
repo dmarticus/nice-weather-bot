@@ -20,8 +20,8 @@ func TwitterAPIClient(consumerKey string, consumerSecret string, apiToken string
 	}
 }
 
-func (self TwitterService) PostTweet(text string) {
-	_, err := self.Api.PostTweet(text, nil)
+func (ts *TwitterService) PostTweet(tweet string) {
+	_, err := ts.Api.PostTweet(tweet, nil)
 	if err != nil {
 		fmt.Printf("there was an error posting the tweet: %s\n", err)
 	}

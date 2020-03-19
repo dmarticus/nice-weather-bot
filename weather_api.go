@@ -43,13 +43,13 @@ func WeatherAPIClient(apiKey string) WeatherApi {
 	}
 }
 
-func (self WeatherApi) Now() Forecast {
+func (wa *WeatherApi) Now() Forecast {
 	weather, err := owm.NewCurrent("F", "EN")
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	weather.CurrentByName(self.Location)
+	weather.CurrentByName(wa.Location)
 
 	return Forecast{
 		Humidity:     weather.Main.Humidity,

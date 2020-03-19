@@ -19,16 +19,12 @@ func main() {
 
 	for {
 		forecast := weatherAPI.Now()
-		// fmt.Println(time.Now())
-		// fmt.Println(twitterAPI)
 		forecastString := "It's " + fmt.Sprintf("%.0f", forecast.Temperature) + " degrees Fahrenheit in Nice currently."
 		detailsString := "\nProof: " + Location.OpenWeatherURL
 		fmt.Println(forecastString + detailsString)
 		if forecast.Temperature >= 69.00 && forecast.Temperature < 70.00 {
 			twitterAPI.PostTweet(forecastString + emoji.Sprint(" Niiice :fire: :fire: fire:") + detailsString)
 		}
-		twitterAPI.PostTweet(forecastString + detailsString)
 		time.Sleep(2 * time.Hour)
-		// fmt.Println(twitterAPI)
 	}
 }
